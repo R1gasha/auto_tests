@@ -2,9 +2,10 @@ import time
 from .pages.main_page import MainPage
 from .pages.tensor_page import TensorPage
 from .pages.contact_page import ContactPage
+from .pages.about_page import AboutPage
 
 
-def test_go_to_contacts(browser):
+def test_first(browser):
     link = 'https://sbis.ru/'
     page_main = MainPage(browser, link)
     page_main.open()
@@ -15,3 +16,8 @@ def test_go_to_contacts(browser):
 
     tesor_page = TensorPage(browser, browser.current_url)
     tesor_page.should_be_block_people()
+    tesor_page.go_to_about()
+
+    about_page = AboutPage(browser, browser.current_url)
+    about_page.should_be_currect_url()
+    about_page.should_be_currect_size()
