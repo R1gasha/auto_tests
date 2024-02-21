@@ -16,3 +16,9 @@ class BasePage:
         except NoSuchElementException:
             return False
         return True
+    
+    def check_title(self, pattern):
+        return True if pattern in self.browser.title else False
+    
+    def check_url(self, pattern):
+        return True if pattern in self.browser.current_url else False
