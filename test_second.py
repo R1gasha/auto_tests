@@ -18,7 +18,6 @@ class TestSecond:
         page_contact = ContactPage(browser, browser.current_url)
         page_contact.check_region(self.old_region)
         
-
     def test_change_region(self, browser):
         page_contact = ContactPage(browser, browser.current_url)
         page_contact.change_region(self.new_region)
