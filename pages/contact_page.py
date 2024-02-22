@@ -11,7 +11,7 @@ class ContactPage(BasePage):
 
 
     def check_region(self, check_city):
-        region = WebDriverWait(self.browser, 10).until(
+        region = WebDriverWait(self.browser, 5).until(
             EC.text_to_be_present_in_element((By.CSS_SELECTOR, ".s-Grid-col + .s-Grid-col--xm12 > .sbis_ru-Region-Chooser > .sbis_ru-Region-Chooser__text"), check_city)
         )
         assert self.is_element_present(By.CSS_SELECTOR, "#contacts_list .sbis_ru-container .sbisru-Contacts-List__col"), "Failde: missing block contacts"
